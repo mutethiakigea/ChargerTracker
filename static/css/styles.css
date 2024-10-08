@@ -1,0 +1,71 @@
+/* static/css/styles.css */
+
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Center the main content */
+h2 {
+  text-align: center;
+}
+
+/* Flash message styling */
+.flash-message {
+  margin: 10px auto; /* Center horizontally */
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  text-align: center; /* Center the text */
+  list-style: none; /* Remove list style */
+  display: block; /* Ensure it displays as a block */
+  width: 80%; /* Set width for centering */
+  max-width: 400px; /* Maximum width */
+}
+
+/* Success message */
+.flash-message.success {
+  background-color: #4caf50; /* Green */
+}
+
+/* Danger message */
+.flash-message.danger {
+  background-color: #f44336; /* Red */
+}
+
+/* General form styling */
+form {
+  max-width: 400px; /* Maximum width for forms */
+  margin: 20px auto; /* Center form */
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button {
+  width: 100%; /* Full width */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Button styling */
+button {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none; /* Remove border */
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue */
+}

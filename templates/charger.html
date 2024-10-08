@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EV Charger</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <h2>EV Charger Details</h2>
+    <form method="POST">
+      <label for="charger_id">Charger ID:</label><br />
+      <input type="text" id="charger_id" name="charger_id" required /><br />
+      <label for="charger_model">Charger Model:</label><br />
+      <input
+        type="text"
+        id="charger_model"
+        name="charger_model"
+        required
+      /><br /><br />
+      <button type="submit">Submit</button>
+    </form>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+  </body>
+</html>

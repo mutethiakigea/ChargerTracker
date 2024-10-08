@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Chargers</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Your Chargers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Charger ID</th>
+          <th>Charger Model</th>
+          <th>QR Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for charger in chargers %}
+        <tr>
+          <td>{{ charger.charger_id }}</td>
+          <td>{{ charger.charger_model }}</td>
+          <td>
+            <a
+              href="{{ url_for('qr_code', charger_id=charger.charger_id) }}"
+              target="_blank"
+              >Generate QR Code</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{{ url_for('logout') }}">Logout</a>
+  </body>
+</html>
